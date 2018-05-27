@@ -1,17 +1,17 @@
-<p>
-  <strong>Title:</strong>
-  <%= @article.title %>
-</p>
-
+<h2><%= @article.title %></h2>
 <p>
   <strong>Text:</strong>
   <%= @article.text %>
 </p>
+<p>
+  <strong>Tags:</strong>
+  <%= @article.tags.join(', ') %>
+</p>
 
-<h2>Comments</h2>
+<h3>Comments</h3>
 <%= render @article.comments %>
 
-<h2>Add a comment:</h2>
+<h3>Add a comment:</h3>
 <%= render partial: 'comments/form' %>
 
 <%= link_to 'Edit', edit_article_path(@article), class: 'btn btn-secondary' %>

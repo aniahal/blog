@@ -25,6 +25,13 @@
   <%= f.text_area :text, class: 'form-control' %>
 </div>
 
+<div class="form-group">
+  <%= f.label :tags %>
+  <br>
+  <%= f.text_field :tags, class: 'form-control' %>
+  <small id="emailHelp" class="form-text text-muted">Type tags separated by comma.</small>
+</div>
+
 <p>
   <%= f.submit class: 'btn btn-primary' %>
 </p>
