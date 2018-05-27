@@ -13,15 +13,15 @@
     </div>
 <% end %>
 
-  <p>
+  <div class="form-group">
     <%= f.label :commenter %><br>
-    <%= f.text_field :commenter %>
-  </p>
-  <p>
+    <%= f.text_field :commenter, class: 'form-control' %>
+  </div>
+  <div class="form-group">
     <%= f.label :body %><br>
-    <%= f.text_area :body %>
-  </p>
+    <%= f.text_area :body, class: 'form-control' %>
+  </div>
   <p>
-    <%= f.submit %>
+    <%= f.submit class: 'btn btn-primary' %>
   </p>
 <% end %>
