@@ -22,15 +22,19 @@ class ArticlesController < ApplicationController
   end
 
   def index
-    @articles = Article.all
+    if params[:q].present?
+      @articles = Article.where('? = any(tags)', params[:q])
+    else
+      @articles = Article.all
+    end
   end
 
   def update
-    if @article.update(article_params)
-      redirect_to @article 
-    else 
-      render 'edit'
-    end
+      if @article.update(article_params)
+        redirect_to @article 
+      else 
+        render 'edit'
+      end
   end
 
   def edit
