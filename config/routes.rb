@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  root 'welcome#index'
-  get 'welcome/index'
+  root 'articles#index'
   resources :articles do
     resources :comments
   end
