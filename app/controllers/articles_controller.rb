@@ -18,6 +18,7 @@ class ArticlesController < ApplicationController
   end
 
   def show
+    @commenter = session[:commenter]
   end
 
   def index
