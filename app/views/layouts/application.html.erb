@@ -10,7 +10,19 @@
   </head>
 
   <body>
+    <nav class="navbar navbar-dark bg-primary">
+      <%= link_to 'Blog', root_path, class: 'navbar-brand'%>
+      <span class="navbar-text">
+        <% if user_signed_in? %>
+          <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'btn btn-outline-dark' %>
+        <% else %>
+        <%= link_to 'Sign in', new_user_session_path, class: 'btn btn-link' %>
+        <% end %>
+      </span>
+    </nav>
     <div class="container">
+        <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>
       <%= yield %>
     </div>
   </body>
