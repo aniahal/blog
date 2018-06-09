@@ -1,4 +1,7 @@
-<%= image_tag @article.image %>
+<% if @article.image.attachment.present? %>
+  <%= image_tag @article.image %>
+<% end %>
+
 <h2><%= @article.title %></h2>
 
 <p>
