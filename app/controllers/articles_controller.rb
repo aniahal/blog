@@ -2,8 +2,8 @@ class ArticlesController < ApplicationController
   before_action :find_article, only: [:show, :update, :edit, :destroy]
   before_action :check_article_access, only: [:update, :edit, :destroy]
 
-  http_basic_authenticate_with name: "admin", password: "secret",
-    except: [:index, :show]
+  # http_basic_authenticate_with name: "admin", password: "secret",
+  #   except: [:index, :show]
 
   def new
     @article = Article.new
@@ -59,6 +59,6 @@ class ArticlesController < ApplicationController
   end
 
   def article_params
-    params.require(:article).permit(:title, :text, :tags)
+    params.require(:article).permit(:title, :text, :tags, :image)
   end
 end
